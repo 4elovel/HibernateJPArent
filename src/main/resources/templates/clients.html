@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Clients</title>
+</head>
+<body>
+<h1>Clients</h1>
+
+<form action="/clients/search" method="get">
+  <input name="name" placeholder="Search by Name" type="text">
+  <input name="contactPhone" placeholder="Search by Contact Phone" type="text">
+  <input name="rentalWishes" placeholder="Search by Rental Wishes" type="text">
+  <button type="submit">Search</button>
+</form>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Contact Phone</th>
+    <th>Rental Wishes</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="client : ${clients}">
+    <td th:text="${client.id}"></td>
+    <td th:text="${client.name}"></td>
+    <td th:text="${client.contactPhone}"></td>
+    <td th:text="${client.rentalWishes}"></td>
+    <td><a th:href="@{/clients/edit/{id}(id=${client.id})}">Edit client</a></td>
+    <td><a th:href="@{/clients/delete/{id}(id=${client.id})}">Delete client</a></td>
+  </tr>
+  </tbody>
+</table>
+
+<a href="/clients/add">Add New Client</a>
+</body>
+</html>

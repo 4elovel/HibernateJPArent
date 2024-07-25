@@ -1,0 +1,28 @@
+<!-- templates/client-form.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Client Form</title>
+</head>
+<body>
+<h1>Client Form</h1>
+<form method="post" th:action="@{/clients/save}" th:object="${client}">
+  <input th:field="*{id}" type="hidden">
+  <div>
+    <label>Name: </label>
+    <input th:field="*{name}" type="text">
+  </div>
+  <div>
+    <label>Contact Phone: </label>
+    <input th:field="*{contactPhone}" type="text">
+  </div>
+  <div>
+    <label>Rental Wishes: </label>
+    <input th:field="*{rentalWishes}" type="text">
+  </div>
+  <div>
+    <button type="submit">Save</button>
+  </div>
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Landlords</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+<h1>All Landlords</h1>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Contact Phone</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="landlord : ${landlords}">
+    <td th:text="${landlord.id}"></td>
+    <td th:text="${landlord.name}"></td>
+    <td th:text="${landlord.contactPhone}"></td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>
