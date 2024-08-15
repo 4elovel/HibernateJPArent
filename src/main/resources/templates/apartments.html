@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <title>Apartments</title>
+  <title th:text="#{title.apartments}">Apartments</title>
 </head>
 <body>
-<h1>All Apartments</h1>
+<h1 th:text="#{label.all.apartments}">All Apartments</h1>
 <table>
   <thead>
   <tr>
-    <th>ID</th>
-    <th>Address</th>
-    <th>Number of Rooms</th>
-    <th>Price</th>
-    <th>Landlord</th>
+    <th th:text="#{label.id}">ID</th>
+    <th th:text="#{label.address}">Address</th>
+    <th th:text="#{label.number.of.rooms}">Number of Rooms</th>
+    <th th:text="#{label.price}">Price</th>
+    <th th:text="#{label.landlord}">Landlord</th>
   </tr>
   </thead>
   <tbody>
